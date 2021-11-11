@@ -152,6 +152,7 @@ p {
 .link.current::after {
   position: absolute;
   bottom: 0;
+  left: 0;
 
   content: '';
   display: block;
@@ -307,9 +308,13 @@ p {
 .work-item-title {
   position: absolute;
   bottom: 0;
-  padding-top: 27px;
-  padding-bottom: 27px;
+  left: 0;
 
+  /* padding-top: 27px;
+  padding-bottom: 27px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   min-height: 70px;
 
@@ -617,7 +622,6 @@ p {
 
 .footer-form {
   margin-left: auto;
-  width: 570px;
 }
 .footer-form-field {
   display: flex;
@@ -637,11 +641,6 @@ p {
 
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* .footer-form-email::placeholder {
-  font-size: 16px;
-  line-height: 1.25;
-  color: var(--footer-contacts-text);
-} */
 .footer-form-email:focus {
   outline: none;
   border: 1px solid var(--accent-color);
@@ -656,6 +655,7 @@ p {
 
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   font-weight: 700;
   font-size: 16px;
@@ -671,6 +671,10 @@ p {
   height: 24px;
 
   fill: currentColor;
+}
+.button.subscribe:hover,
+.button.subscribe:focus {
+  background-color: var(--btn-accent-color);
 }
 
 /** modal */
@@ -807,8 +811,8 @@ p {
   line-height: 1.71;
 }
 .form-checkbox-agreement {
-  /* appearance: none; */
   position: absolute;
+  /* грамотное скрытие */
   white-space: nowrap;
   width: 1px;
   height: 1px;
@@ -818,6 +822,7 @@ p {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+  /* аналог - appearance: none; НЕ во всех браузерах*/
 }
 .form-checkbox-icon {
   position: absolute;
@@ -847,11 +852,14 @@ p {
 .form-checkbox-agreement:checked ~ .form-check-icon {
   opacity: 1;
 }
+.form-checkbox .link {
+  text-decoration: underline;
+}
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.3);
 }
 .button.form {
-  margin: 0 auto;
+  align-self: center;
   width: 200px;
   min-height: 50px;
   background-color: var(--accent-color);
