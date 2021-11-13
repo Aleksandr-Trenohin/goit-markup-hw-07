@@ -26,9 +26,6 @@ body {
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.03em;
 }
-/* .accent {
-  color: var(--accent-color);
-} */
 /* ? блок-утилита */
 .link {
   text-decoration: none;
@@ -837,6 +834,7 @@ p {
   outline: none;
   border: 1px solid var(--accent-color);
 }
+/* ? */
 .checkbox {
   position: relative;
 
